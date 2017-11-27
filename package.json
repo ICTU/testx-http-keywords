@@ -1,6 +1,6 @@
 {
   "name": "testx-http-keywords",
-  "version": "0.14.3",
+  "version": "0.14.4",
   "description":
     "Keywords to send simple http requests and check the responses using the testx library.",
   "main": "index.coffee",
