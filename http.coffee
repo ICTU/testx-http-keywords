@@ -17,11 +17,13 @@ send = (method) -> (options) ->
 
   new Promise (resolve, reject) ->
     request options, (error, response, body) ->
-      reject error if error
-      resolve
-        statusCode: response.statusCode
-        body: body
-        headers: response.headers
+      if error
+        reject error
+      else
+        resolve
+          statusCode: response.statusCode
+          body: body
+          headers: response.headers
 
 module.exports =
   get: send "GET"
