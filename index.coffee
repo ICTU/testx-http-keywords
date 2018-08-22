@@ -61,7 +61,7 @@ send = (method) -> (args, ctx) ->
       else
         expected = expectedResponseStatus or 200
         failMsg = assertFailedMsg "Expected response status code to be #{expected}, but it was #{response.statusCode}", ctx
-        expect(response.statusCode).toEqual expected, failMsg
+        expect(response.statusCode).toBe expected, failMsg
       if args['expected response']
         expected = if args['expected response']?.trim
           args['expected response'].trim().replace /\r/g, ''
@@ -71,7 +71,7 @@ send = (method) -> (args, ctx) ->
           body.trim().replace /\r/g, ''
         else body
         failMsg = assertFailedMsg "Expected response body to equal '#{expected}', but it was '#{actual}'", ctx
-        expect(actual).toEqual expected, failMsg
+        expect(actual).toBe expected, failMsg
       if args['expected response regex']
         expected = args['expected response regex']
         actual = if typeof response.body is 'object' then JSON.stringify(response.body) else response.body
@@ -115,7 +115,7 @@ send = (method) -> (args, ctx) ->
               doc = new dom().parseFromString(response.body)
               actual = xpath.select(path, doc)
               failMsg = assertFailedMsg "Expected the value at xpath '#{path}' to equal '#{expected}', but it was '#{actual}'", ctx
-              expect(actual?.toString()).toEqual expected, failMsg
+              expect(actual?.toString()).toBe expected, failMsg
           else
             throw new Error """
                 Error occurred in #{printable _.pick(ctx._meta, 'file', 'sheet', 'Row')}.
