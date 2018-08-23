@@ -1,18 +1,20 @@
+[![Build Status](https://travis-ci.org/ICTU/testx-http-keywords.svg?branch=master)](https://travis-ci.org/ICTU/testx-http-keywords)
+
 testx-http-keywords
 =====
 
-A library that extends testx with keywords for sending basic http requests. This library is packaged as a npm package
+A library that extends testx with keywords for sending basic http requests. @ictu/testx is a fork maintained and used by ICTU (www.ictu.nl). This library is packaged as a npm package
 
 ## How does it work
 From the directory of the art code install the package as follows:
 ```sh
-npm install testx-http-keywords --save
+npm install @ictu/testx-http-keywords --save
 ```
 
 After installing the package add the keywords to your protractor config file as follows:
 
 ```
-testx.keywords.add(require('testx-http-keywords'))
+testx.keywords.add(require('@ictu/testx-http-keywords'))
 ```
 
 ## Keywords

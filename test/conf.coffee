@@ -6,6 +6,8 @@ exports.config =
     browserName: 'chrome'
     shardTestFiles: false
     maxInstances: 5
+    chromeOptions:
+      args: ["--no-sandbox", "--headless", "--disable-gpu", "--window-size=1024,800"]
 
 
   framework: 'jasmine'
@@ -18,6 +20,6 @@ exports.config =
   rootElement: 'html'
 
   onPrepare: ->
-    require 'testx'
+    require '@ictu/testx'
     testx.keywords.add require('../')
     beforeEach -> browser.ignoreSynchronization = true

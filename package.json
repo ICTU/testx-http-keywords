@@ -1,36 +1,42 @@
 {
-  "name": "testx-http-keywords",
-  "version": "0.14.5",
-  "description":
-    "Keywords to send simple http requests and check the responses using the testx library.",
+  "name": "@ictu/testx-http-keywords",
+  "version": "v0.14.6",
+  "description": "Keywords to send simple http requests and check the responses using the testx library.",
   "main": "index.coffee",
-  "author": "Greyarch BV",
+  "author": "ICTU",
   "license": "ISC",
   "dependencies": {
     "coffee-errors": "^0.8.6",
     "jsonpath-plus": "^0.15.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "parse-key-value": "^1.0.0",
-    "request": "^2.73.0",
+    "request": "^2.88.0",
     "xmldom": "^0.1.27",
     "xpath": "0.0.24"
   },
   "devDependencies": {
+    "@ictu/testx": "^2.11.2",
     "coffee-script": "^1.10.0",
-    "protractor": "^5.1.1",
-    "testx": "^2.6.4"
+    "protractor": "^5.4.0"
   },
   "scripts": {
-    "pretest": "webdriver-manager update",
+    "pretest": "webdriver-manager update --gecko=false",
     "test": "protractor test/conf.coffee",
-    "test-docker":
-      "docker run --rm -it -v `pwd`:/work --net=host testx/protractor test/conf.coffee"
+    "test-docker": "docker run --rm -it -v `pwd`:/work --net=host testx/protractor test/conf.coffee"
   },
   "repository": {
     "type": "git",
-    "url": "http://www.github.com/greyarch/testx-http-keywords.git"
+    "url": "https://github.com/ICTU/testx-http-keywords.git"
   },
-  "keywords": ["http", "test", "testx"],
+  "publishConfig": {
+    "@ictu:registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "keywords": [
+    "http",
+    "test",
+    "testx"
+  ],
   "testx": {
     "logScript": false,
     "actionTimeout": 4000

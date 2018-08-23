@@ -1,4 +1,4 @@
-runner = require 'testx'
+runner = require '@ictu/testx'
 dummyHttpServer = require '../dummyHttpServer.js'
 
 describe 'HTTP keywords', ->
