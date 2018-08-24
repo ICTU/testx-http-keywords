@@ -20,6 +20,6 @@ exports.config =
   rootElement: 'html'
 
   onPrepare: ->
-    require 'testx'
+    require '@ictu/testx'
     testx.keywords.add require('../')
     beforeEach -> browser.ignoreSynchronization = true
