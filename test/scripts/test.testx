@@ -84,3 +84,7 @@
     //test: '<test>Test Response</test>,<test>Another Response</test>'
     //test[1]: '<test>Test Response</test>'
     string(//test): 'Test Response'
+- send http request:
+    method: delete
+    url: http://localhost:8888/test/does/not/exist
+    expected status code: 404

@@ -34,6 +34,9 @@ function handleRequest(request, response) {
   } else if (request.url === "/test/delete" && request.method === "DELETE") {
     response.writeHead(204);
     response.end();
+  } else if (request.url === "/test/does/not/exist" && request.method === "DELETE") {
+    response.writeHead(404);
+    response.end();
   } else if (request.url === "/test/patch" && request.method === "PATCH") {
     echoRequestBody(request, response);
   } else if (request.url === "/test/head" && request.method === "HEAD") {

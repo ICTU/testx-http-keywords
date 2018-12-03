@@ -1,6 +1,6 @@
 {
   "name": "@ictu/testx-http-keywords",
-  "version": "v0.14.6",
+  "version": "v0.14.7",
   "description": "Keywords to send simple http requests and check the responses using the testx library.",
   "main": "index.coffee",
   "author": "ICTU",
@@ -8,16 +8,16 @@
   "dependencies": {
     "coffee-errors": "^0.8.6",
     "jsonpath-plus": "^0.15.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "parse-key-value": "^1.0.0",
     "request": "^2.88.0",
     "xmldom": "^0.1.27",
     "xpath": "0.0.24"
   },
   "devDependencies": {
-    "@ictu/testx": "^2.11.2",
+    "@ictu/testx": "^2.12.0",
     "coffee-script": "^1.10.0",
-    "protractor": "^5.4.0"
+    "protractor": "^5.4.1"
   },
   "scripts": {
     "pretest": "webdriver-manager update --gecko=false",

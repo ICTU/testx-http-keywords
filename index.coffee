@@ -56,7 +56,11 @@ send = (method) -> (args, ctx) ->
       pathParams = _.omit args, namedParams
       expectedResponseStatus = parseInt(args['expected status code'])
       if(method is 'delete')
-        failMsg = assertFailedMsg "Expected response status code to be 200, 202 or 204, but it was '#{response.statusCode}'", ctx
+        if not expectedResponseStatus or expectedResponseStatus of [200, 202, 204]
+          codesString = '200, 202 or 204'
+        else
+          codesString = "200, 202, 204 or #{expectedResponseStatus}"
+        failMsg = assertFailedMsg "Expected response status code to be #{codesString}, but it was '#{response.statusCode}'", ctx
         expect(response.statusCode in [expectedResponseStatus, 200, 202, 204]).toBeTruthy failMsg
       else
         expected = expectedResponseStatus or 200
